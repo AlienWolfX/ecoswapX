@@ -11,16 +11,11 @@
 </div>
 
 <script>
-    // Fetch data from the API
-    fetch('http://ecoswapx.test/api/items')
+    fetch('https://ecoswapx.test/api/items')
         .then(response => response.json())
         .then(data => {
-            // Handle each item in the API response
             data.forEach(item => {
-                // Create a new div for each item
                 const newItemDiv = document.createElement('div');
-
-                // Set the content of the div using the API data
                 newItemDiv.innerHTML = `
                     <img src="${item.image}" alt="${item.name}" width="200" height="200">
                     <div class="flex items-center">
@@ -32,14 +27,12 @@
                         ${item.description}
                     </p>
                     <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                        Condition: <button type="button" style="width: 150px;" class="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">${item.condition}</button>
+                        Condition: <button type="button" style="width: 150px;" class="ms-3 text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">${item.condition}</button>
                     </p>
                     <p class="mt-4 text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
-                        Swap for: <button type="button" style="width: 150px;" class="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">${item.swap_for_item}</button>
+                        Swap for: <button type="button" style="width: 150px;" class="ms-4 text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800">${item.swap_for_item}</button>
                     </p>
                 `;
-
-                // Append the new div to the 'app' div
                 document.getElementById('app').appendChild(newItemDiv);
             });
         })
