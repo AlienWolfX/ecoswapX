@@ -20,7 +20,7 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser
     use Notifiable;
     use TwoFactorAuthenticatable;
 
-    public function canAccessPanel(Panel $panel): bool // Fix the undefined type issue
+    public function canAccessPanel(Panel $panel): bool // For Filament
     {
         return str_ends_with($this->email, '@test.com') && $this->hasVerifiedEmail();
     }
@@ -32,6 +32,7 @@ class User extends Authenticatable implements MustVerifyEmail, FilamentUser
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];
