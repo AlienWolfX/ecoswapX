@@ -9,7 +9,7 @@
 <div class="bg-gray-200 dark:bg-gray-800 bg-opacity-25 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 p-6 lg:p-8" id="app">
 
 </div>
-
+{{-- <img src="${item.image}" alt="${item.name}" width="200" height="200"> --}}
 <script>
     fetch('https://ecoswapx.test/api/items')
         .then(response => response.json())
@@ -17,7 +17,7 @@
             data.forEach(item => {
                 const newItemDiv = document.createElement('div');
                 newItemDiv.innerHTML = `
-                    <img src="${item.image}" alt="${item.name}" width="200" height="200">
+                    <img src="http://www.fillster.com/images/pictures/10p.jpg" alt="dog" width="200" height="200">
                     <div class="flex items-center">
                         <h2 class="text-xl font-semibold text-gray-900 dark:text-white">
                             ${item.name}

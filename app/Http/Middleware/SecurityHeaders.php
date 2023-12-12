@@ -21,6 +21,9 @@ class SecurityHeaders
         $response->header('X-Frame-Options', 'SAMEORIGIN');
         $response->header('X-XSS-Protection', '1; mode=block');
         $response->header('Content-Security-Policy', "default-src 'self'");
+        $response->header('Cross-Origin-Embedder-Policy', 'require-corp');
+        $response->header('Cross-Origin-Opener-Policy', 'same-origin');
+        $response->header('Referrer-Policy', 'strict-origin-when-cross-origin');
 
         $response->header('Strict-Transport-Security', 'max-age=31536000; includeSubDomains; preload');
 

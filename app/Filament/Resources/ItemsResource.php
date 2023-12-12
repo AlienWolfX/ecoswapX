@@ -2,16 +2,17 @@
 
 namespace App\Filament\Resources;
 
-use App\Filament\Resources\ItemsResource\Pages;
-use App\Filament\Resources\ItemsResource\RelationManagers;
-use App\Models\Items;
 use Filament\Forms;
-use Filament\Forms\Form;
-use Filament\Resources\Resource;
 use Filament\Tables;
+use App\Models\Items;
+use Filament\Forms\Form;
 use Filament\Tables\Table;
+use Filament\Resources\Resource;
 use Illuminate\Database\Eloquent\Builder;
+use App\Filament\Resources\ItemsResource\Pages;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use App\Filament\Resources\ItemsResource\RelationManagers;
+use Tapp\FilamentAuditing\RelationManagers\AuditsRelationManager;
 
 class ItemsResource extends Resource
 {
@@ -64,7 +65,7 @@ class ItemsResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            AuditsRelationManager::class
         ];
     }
 
